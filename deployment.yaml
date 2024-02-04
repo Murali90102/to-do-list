@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: todolist-container
-        image: murali90102/todolist:24
+        image: murali90102/todolist:6
         ports:
         - containerPort: 8080
 ---
