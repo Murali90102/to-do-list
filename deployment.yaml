@@ -28,7 +28,7 @@ metadata:
     app: todolist
 spec:
   selector:
-    app: contacts
+    app: todolist
 
   type: NodePort
   ports:
