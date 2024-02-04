@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todolist
+  labels:
+    app: todolist
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: todolist
+  template:
+    metadata:
+      labels:
+        app: todolist
+    spec:
+      containers:
+      - name: todolist-container
+        image: murali90102/todolist:24
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: todolist
+  labels:
+    app: todolist
+spec:
+  selector:
+    app: contacts
+
+  type: NodePort
+  ports:
+  - nodePort: 31111
+    port: 8080
+    targetPort: 8080
